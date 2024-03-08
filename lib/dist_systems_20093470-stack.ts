@@ -112,5 +112,9 @@ export class DistSystems20093470Stack extends cdk.Stack {
           "GET",
           new apig.LambdaIntegration(getMovieByIdFn, { proxy: true })
         );
+        moviesEndpoint.addMethod(
+          "POST",
+          new apig.LambdaIntegration(newMovieFn, { proxy: true })
+        );
       }
     }
