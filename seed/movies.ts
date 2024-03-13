@@ -1,4 +1,4 @@
-import {Movie, MovieCast} from '../shared/types'
+import {Movie, MovieCast, Reviews} from '../shared/types'
 
 export const movies : Movie[] = [
   {
@@ -350,5 +350,14 @@ export const movieCasts: MovieCast[] = [
   },
 ];
 
+export const movieReview: Reviews[] = [
+  {
+    movieId: 2000,
+    movieName: "Five Nights at Freddy's",
+    reviewDate: "2023-10-20",
+    reviewStar: 3,
+    Comment: "This movie was okay but nothing to write home about",
+  }
+];
 
 
