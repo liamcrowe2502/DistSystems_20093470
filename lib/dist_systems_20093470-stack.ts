@@ -151,6 +151,40 @@ const addMovieReviewFn = new lambdanode.NodejsFunction(
   }
 );
 
+// Inside the DistSystems20093470Stack class constructor
+const getReviewByRatingFn = new lambdanode.NodejsFunction(
+  this,
+  "GetReviewByRatingFn",
+  {
+    architecture: lambda.Architecture.ARM_64,
+    runtime: lambda.Runtime.NODEJS_16_X,
+    entry: `${__dirname}/../lambdas/getReviewByRating.ts`,
+    timeout: cdk.Duration.seconds(10),
+    memorySize: 128,
+    environment: {
+      REVIEWS_TABLE_NAME: reviewsTable.tableName,
+      REGION: "eu-west-1",
+    },
+  }
+);
+
+   // NEW Lambda function for getting reviews by reviewerName
+   const getReviewsByReviewerNameFn = new lambdanode.NodejsFunction(
+    this,
+    "GetReviewsByReviewerNameFn",
+    {
+      architecture: lambda.Architecture.ARM_64,
+      runtime: lambda.Runtime.NODEJS_16_X,
+      entry: `${__dirname}/../lambdas/getReviewsByReviewerName.ts`, // Update with your path to the Lambda function code
+      timeout: cdk.Duration.seconds(10),
+      memorySize: 128,
+      environment: {
+        REVIEWS_TABLE_NAME: reviewsTable.tableName,
+        REGION: "eu-west-1",
+      },
+    }
+  );
+
     // Permissions 
     moviesTable.grantReadData(getMovieByIdFn)
     moviesTable.grantReadData(getAllMoviesFn)
@@ -158,6 +192,8 @@ const addMovieReviewFn = new lambdanode.NodejsFunction(
     movieCastsTable.grantReadData(getMovieCastMembersFn);
     reviewsTable.grantReadData(getMovieReviewsFn);
     reviewsTable.grantWriteData(addMovieReviewFn);
+    reviewsTable.grantReadData(getReviewByRatingFn);
+    reviewsTable.grantReadData(getReviewsByReviewerNameFn);
 
     const api = new apig.RestApi(this, "RestAPI", {
       description: "demo api",
@@ -206,5 +242,21 @@ const addMovieReviewFn = new lambdanode.NodejsFunction(
       "POST",
       new apig.LambdaIntegration(addMovieReviewFn, { proxy: true })
     );
+
+    // Define API Gateway endpoint for getting reviews by minimum rating
+const reviewsByRatingEndpoint = api.root.addResource("reviewsByRating");
+reviewsByRatingEndpoint.addMethod(
+  "GET",
+  new apig.LambdaIntegration(getReviewByRatingFn, { proxy: true })
+);
+
+ // NEW API Gateway endpoint for getting reviews by reviewerName
+ const reviewsByReviewerNameEndpoint = api.root.addResource("reviewsByReviewerName");
+ reviewsByReviewerNameEndpoint.addMethod(
+   "GET",
+   new apig.LambdaIntegration(getReviewsByReviewerNameFn, { proxy: true })
+ );
   }
 }
+
+//minRating

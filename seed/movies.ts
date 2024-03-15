@@ -15,7 +15,8 @@ export const movies : Movie[] = [
     title: 'Rebel Moon - Part One: A Child of Fire',
     video: false,
     vote_average: 6.4,
-    vote_count: 750
+    vote_count: 750,
+    movieId: 2000
   },
   {
     adult: false,
@@ -31,7 +32,8 @@ export const movies : Movie[] = [
     title: 'Aquaman and the Lost Kingdom',
     video: false,
     vote_average: 6.5,
-    vote_count: 299
+    vote_count: 299,
+    movieId: 2000
   },
   {
     adult: false,
@@ -47,7 +49,8 @@ export const movies : Movie[] = [
     title: 'The Hunger Games: The Ballad of Songbirds & Snakes',
     video: false,
     vote_average: 7.2,
-    vote_count: 1181
+    vote_count: 1181,
+    movieId: 2000
   },
   {
     adult: false,
@@ -63,7 +66,8 @@ export const movies : Movie[] = [
     title: 'The Family Plan',
     video: false,
     vote_average: 7.3,
-    vote_count: 457
+    vote_count: 457,
+    movieId: 2000
   },
   {
     adult: false,
@@ -79,7 +83,8 @@ export const movies : Movie[] = [
     title: 'Wonka',
     video: false,
     vote_average: 7.2,
-    vote_count: 703
+    vote_count: 703,
+    movieId: 2000
   },
   {
     adult: false,
@@ -95,7 +100,8 @@ export const movies : Movie[] = [
     title: 'Silent Night',
     video: false,
     vote_average: 5.8,
-    vote_count: 181
+    vote_count: 181,
+    movieId: 2000
   },
   {
     adult: false,
@@ -111,7 +117,8 @@ export const movies : Movie[] = [
     title: 'Doors',
     video: false,
     vote_average: 5,
-    vote_count: 119
+    vote_count: 119,
+    movieId: 2000
   },
   {
     adult: false,
@@ -127,7 +134,8 @@ export const movies : Movie[] = [
     title: 'Oppenheimer',
     video: false,
     vote_average: 8.1,
-    vote_count: 5713
+    vote_count: 5713,
+    movieId: 2000
   },
   {
     adult: false,
@@ -143,7 +151,8 @@ export const movies : Movie[] = [
     title: 'Saltburn',
     video: false,
     vote_average: 7.1,
-    vote_count: 473
+    vote_count: 473,
+    movieId: 2000
   },
   {
     adult: false,
@@ -159,7 +168,8 @@ export const movies : Movie[] = [
     title: 'Killers of the Flower Moon',
     video: false,
     vote_average: 7.5,
-    vote_count: 1647
+    vote_count: 1647,
+    movieId: 2000
   },
   {
     adult: false,
@@ -175,7 +185,8 @@ export const movies : Movie[] = [
     title: 'Thanksgiving',
     video: false,
     vote_average: 6.7,
-    vote_count: 347
+    vote_count: 347,
+    movieId: 2000
   },
   {
     adult: false,
@@ -191,7 +202,8 @@ export const movies : Movie[] = [
     title: 'Trolls Band Together',
     video: false,
     vote_average: 7.2,
-    vote_count: 436
+    vote_count: 436,
+    movieId: 2000
   },
   {
     adult: false,
@@ -207,7 +219,8 @@ export const movies : Movie[] = [
     title: 'Fast X',
     video: false,
     vote_average: 7.2,
-    vote_count: 4566
+    vote_count: 4566,
+    movieId: 2000
   },
   {
     adult: false,
@@ -223,7 +236,8 @@ export const movies : Movie[] = [
     title: 'The Serpent',
     video: false,
     vote_average: 3.8,
-    vote_count: 12
+    vote_count: 12,
+    movieId: 2000
   },
   {
     adult: false,
@@ -239,87 +253,8 @@ export const movies : Movie[] = [
     title: 'The Creator',
     video: false,
     vote_average: 7.2,
-    vote_count: 1645
-  },
-  {
-    adult: false,
-    backdrop_path: '/X8yF6STUk5Zr5nAuLBJiio8Sxh.jpg',
-    genre_ids: [ 18, 10749 ],
-    id: 1143183,
-    original_language: 'tl',
-    original_title: 'Rewind',
-    overview: "Mary (Marian Rivera) loves John (Dingdong Dantes) for as long as she can remember. But after years of marriage, John's priorities shift, leading to a strained relationship with Mary, which causes a tragic accident that takes away Mary's life. Until one day, John gets an extraordinary proposition - to rewind time and save the life of the woman he loves.",
-    popularity: 506.227,
-    poster_path: '/vW80VheMJhHsj0pDVYJL3qAMWMd.jpg',
-    release_date: '2023-12-25',
-    title: 'Rewind',
-    video: false,
-    vote_average: 0,
-    vote_count: 0
-  },
-  {
-    adult: false,
-    backdrop_path: '/4mmrgZW9bcgMRFdV1lCcXqCEXEr.jpg',
-    genre_ids: [ 28, 18, 12, 9648, 53 ],
-    id: 755401,
-    original_language: 'en',
-    original_title: 'Skydog',
-    overview: 'After a high school senior working on his pilot’s license rescues a dog named Oreo, he finds out his mom is a CIA agent who’s been captured. He teams up with Oreo and a new friend to find his mother and uncover double agents inside the CIA.',
-    popularity: 504.779,
-    poster_path: '/5M3bY1rl9QIQSmrAGPEt9qutj64.jpg',
-    release_date: '2020-10-20',
-    title: 'Skydog',
-    video: false,
-    vote_average: 7.3,
-    vote_count: 8
-  },
-  {
-    adult: false,
-    backdrop_path: '/zIYROrkHJPYB3VTiW1L9QVgaQO.jpg',
-    genre_ids: [ 28, 35 ],
-    id: 897087,
-    original_language: 'en',
-    original_title: 'Freelance',
-    overview: 'An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.',
-    popularity: 501.319,
-    poster_path: '/7Bd4EUOqQDKZXA6Od5gkfzRNb0.jpg',
-    release_date: '2023-10-05',
-    title: 'Freelance',
-    video: false,
-    vote_average: 6.5,
-    vote_count: 390
-  },
-  {
-    adult: false,
-    backdrop_path: '/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg',
-    genre_ids: [ 27, 9648 ],
-    id: 507089,
-    original_language: 'en',
-    original_title: "Five Nights at Freddy's",
-    overview: "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
-    popularity: 496.682,
-    poster_path: '/7BpNtNfxuocYEVREzVMO75hso1l.jpg',
-    release_date: '2023-10-25',
-    title: "Five Nights at Freddy's",
-    video: false,
-    vote_average: 7.8,
-    vote_count: 2993
-  },
-  {
-    adult: false,
-    backdrop_path: '/9jPoyxjiEYPylUIMI3Ntixf8z3M.jpg',
-    genre_ids: [ 16, 12, 35, 10751 ],
-    id: 520758,
-    original_language: 'en',
-    original_title: 'Chicken Run: Dawn of the Nugget',
-    overview: "A band of fearless chickens flock together to save poultry-kind from an unsettling new threat: a nearby farm that's cooking up something suspicious.",
-    popularity: 494.214,
-    poster_path: '/exNtEY8QUuQh9e23wSQjkPxKIU3.jpg',
-    release_date: '2023-12-08',
-    title: 'Chicken Run: Dawn of the Nugget',
-    video: false,
-    vote_average: 7.4,
-    vote_count: 325
+    vote_count: 1645,
+    movieId: 2000
   }
 ]
 
@@ -354,10 +289,51 @@ export const movieReview: Reviews[] = [
   {
     movieId: 2000,
     movieName: "Five Nights at Freddy's",
+    reviewerName: "Liam Crowe",
     reviewDate: "2023-10-20",
     reviewStar: 3,
     Comment: "This movie was okay but nothing to write home about",
+  },
+  {
+    movieId: 2001,
+    movieName: "Rebel Moon",
+    reviewerName: "Liam Crowe",
+    reviewDate: "2024-03-14",
+    reviewStar: 5,
+    Comment: "This movie was good.",
   }
 ];
 
+//Add review, change ID
+/*
+  {
+    "adult": false,
+    "backdrop_path": "/1X7vow16X7CnCoexXh4H4F2yDJv.jpg",
+    "genre_ids": [ 80, 18, 36 ],
+    "id": 4666666,
+    "original_language": "en",
+    "original_title": "Killers of the Flower Moon",
+    "overview": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.",
+    "popularity": 612.671,
+    "poster_path": "/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg",
+    "release_date": "2023-10-18",
+    "title": "Killers of the Flower Moon",
+    "video": false,
+    "vote_average": 7.5,
+    "vote_count": 1647,
+    "movieId": 2002
+  }
+*/
+
+//Add review, change ID
+/*
+{
+    "movieId": 2002,
+    "movieName": "Killers of the Flower Moon",
+    "reviewerName": "Jim",
+    "reviewDate": "2023-11-20",
+    "reviewStar": 2,
+    "Comment": "This movie was long"
+  }
+*/
 
