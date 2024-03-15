@@ -1,46 +1,43 @@
+import { Handler } from "aws-lambda";
 import { APIGatewayProxyHandlerV2 } from "aws-lambda";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, QueryCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 
 const ddbDocClient = createDDbDocClient();
 
-export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {     
+export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {     // Note change
   try {
     console.log("Event: ", event);
-    const queryParams = event?.queryStringParameters;
-    const minRating = queryParams?.minRating ? parseInt(queryParams.minRating) : undefined;
+    const parameters  = event?.pathParameters;
+    const movieId = parameters?.movieId ? parseInt(parameters.movieId) : undefined;
 
-    if (!minRating) {
-      return {
-        statusCode: 400,
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ Message: "Missing or invalid minRating parameter" }),
-      };
-    }
-
-    const commandOutput = await ddbDocClient.send(
-      new QueryCommand({
-        TableName: process.env.REVIEWS_TABLE_NAME,
-        KeyConditionExpression: "reviewStar <= :rating",
-        ExpressionAttributeValues: {
-          ":rating": minRating,
-        },
-      })
-    );
-
-    const reviews = commandOutput.Items;
-
-    if (!reviews || reviews.length === 0) {
+    if (!movieId) {
       return {
         statusCode: 404,
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ Message: "No reviews found with the specified minimum rating" }),
+        body: JSON.stringify({ Message: "Missing movie Id" }),
       };
     }
+    const commandOutput = await ddbDocClient.send(
+      new GetCommand({
+        TableName: process.env.TABLE_NAME,
+        Key: { id: movieId },
+      })
+    );
+    if (!commandOutput.Item) {
+      return {
+        statusCode: 404,
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ Message: "Invalid movie Id" }),
+      };
+    }
+    const body = {
+      data: commandOutput.Item,
+    };
 
     // Return Response
     return {
@@ -48,7 +45,7 @@ export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ reviews }),
+      body: JSON.stringify(body),
     };
   } catch (error: any) {
     console.log(JSON.stringify(error));
