@@ -99,3 +99,12 @@ export const movieReview: Reviews[] = [
   }
 */
 
+/*
+{
+    "username": "userA",
+    "password": "passwA!1",
+    "email": "liamcrowe2502@gmail.com"
+}
+
+*/
+

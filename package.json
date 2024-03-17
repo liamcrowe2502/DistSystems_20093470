@@ -27,7 +27,10 @@
     "ajv": "^8.12.0",
     "aws-cdk-lib": "2.88.0",
     "aws-lambda": "^1.0.7",
+    "axios": "^1.6.8",
     "constructs": "^10.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwk-to-pem": "^2.0.5",
     "source-map-support": "^0.5.21"
   }
 }
