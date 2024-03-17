@@ -21,5 +21,10 @@ Add reviews
 Get all reviews
 Attempted get review by name and ID and rating. Not working.
 
-### I would show screenshots but the whole application is broken. It will not work now so no pushes have been made.
+### Screenshots
+Movies Display
+![Movies](img/image.png)
+Reviews Display
+![Reviews](img/Screenshot 2024-03-17 164948.png)
+Add Movie and Reviews
   
