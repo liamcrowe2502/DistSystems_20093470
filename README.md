@@ -22,9 +22,11 @@ Get all reviews
 Attempted get review by name and ID and rating. Not working.
 
 ### Screenshots
-Movies Display
+# Movies Display
 ![Movies](img/image.png)
-Reviews Display
-![Reviews](img/Screenshot 2024-03-17 164948.png)
-Add Movie and Reviews
+# Reviews Display
+![Reviews](img/reviews.png)
+# Add Movie and Reviews
+![addMovie](img/addMovie.png)
+![addReview](img/addReview.png)
   
